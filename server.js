@@ -232,5 +232,32 @@ function deletePrompts(deleteEmployeeChoice) {
     });
 }
 
-function changeRole(){}
+// Updates the employee role
+function changeRole(){
+    employeeArray();
+}
+
+// Creates an employee array to be updated
+function employeeArray(){
+    console.log("Updating employee");
+    var query =
+    `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager
+    FROM employee e
+    JOIN role r
+    ON e.role_id = r.id
+    JOIN department d
+    ON d.id = r.department_id
+    JOIN employee m
+    ON m.id = e.manager_id`
+    connection.query(query, function (err, res) {
+        if (err) throw err;
+        const employeeChoice = res.map(({ id, first_name, last_name }) => ({
+            value: id, name: `${first_name} ${last_name}`
+        }));
+        console.table(res);
+        console.log("employeeArray To Update!\n")
+        roleArray(employeeChoice);
+    });
+}
+function roleArray(){}
 function addRole(){}
