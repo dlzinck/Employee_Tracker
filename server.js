@@ -1,11 +1,12 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
-const cTable = require('console.table');
+require('console.table');
+
 
 // MySQL connection
 const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3500,
+    host: '127.0.0.1',
+    port: 3306,
     user: 'root',
     password: 'password',
     database: 'employees_db'
