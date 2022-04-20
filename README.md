@@ -34,6 +34,7 @@ When I start the application I am presented with the following options: view all
 ## Links
 
 - [GitHub Repository](https://github.com/dlzinck/Employee_Tracker)
+- [Live Demo](https://watch.screencastify.com/v/mOjcIzNPQcYadKUMKLPL)
 
 
 ## Screenshots
